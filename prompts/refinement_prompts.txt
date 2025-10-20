@@ -1,0 +1,4 @@
+# Prompts used for debugging and polishing
+
+1. "Review this JavaScript code and suggest fixes for a memory leak in the game loop."
+2. "Suggest improvements to the game's difficulty curve to keep players engaged."

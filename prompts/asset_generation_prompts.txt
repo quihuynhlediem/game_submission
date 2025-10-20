@@ -1,0 +1,4 @@
+# Prompts used for generating visuals/assets
+
+1. "Create a set of 16x16 pixel sprites for a character that collects stars in a night-sky theme."
+2. "Generate background tile variations for a space-themed platformer."
