@@ -67,12 +67,17 @@ export const GameShell: React.FC<{ chapterId?: string, levelId?: string }> = ({ 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <Card className="bg-gray-800">
-            <h2 className="text-2xl font-bold mb-2">The Order</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold mb-2">Prompt Review</h2>
+              <div>
+                <Button onClick={() => navigate('/')} className="text-sm px-3 py-1 bg-gray-700 hover:bg-gray-600">Back</Button>
+              </div>
+            </div>
             <p className="text-gray-400 mb-4">{currentLevel.challenge}</p>
 
             <h3 className="font-semibold">Bench</h3>
             <div className="mt-2 border-2 border-dashed border-gray-700 rounded-2xl p-4 min-h-[8rem]">
-              {bench.length === 0 && <p className="text-gray-500">Drag prompt ingredients here or use the buttons below.</p>}
+              {bench.length === 0 && <p className="text-gray-500">Drag prompt components here or use the buttons below.</p>}
               <div className="space-y-2 mt-2">
                 {bench.map(b => (
                   <PromptCard key={b.id} card={b} inBench onRemove={removeFromBench} />
@@ -91,7 +96,7 @@ export const GameShell: React.FC<{ chapterId?: string, levelId?: string }> = ({ 
 
         <div>
           <Card className="bg-gray-800">
-            <h3 className="text-lg font-semibold mb-2">Available Ingredients</h3>
+            <h3 className="text-lg font-semibold mb-2">Available Components</h3>
             <div className="space-y-2">
               {available.map(a => (
                 <PromptCard key={a.id} card={a} onAdd={addToBench} />

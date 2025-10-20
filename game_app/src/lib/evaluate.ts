@@ -20,7 +20,8 @@ export function evaluate(level: Level, benchCards: Card[]) {
   const missing = level.required.filter(t => !typesOnBench.has(t))
   const forbiddenPresent = level.forbidden.filter(t => typesOnBench.has(t))
   const hasForbidden = forbiddenPresent.length > 0
-  const hasVague = typesOnBench.has('vague')
+  // treat 'vague' as a quality problem on cards (non-optimized or wrong)
+  const hasVagueQuality = benchCards.some(c => c.quality === 'non-optimized' || c.quality === 'wrong')
 
   const cfg = { successMultiplier: 1.0, penaltyMultiplier: 0.5, vagueVariance: [0.1, 2.0] as [number, number], ...level.tuning }
 
@@ -39,7 +40,7 @@ export function evaluate(level: Level, benchCards: Card[]) {
   let outputTokens: number
   if (status === 'success') {
     outputTokens = Math.round(inputTokens * cfg.successMultiplier * randBetween(0.9, 1.3))
-  } else if (hasVague) {
+  } else if (hasVagueQuality) {
     outputTokens = Math.round(inputTokens * randBetween(cfg.vagueVariance[0], cfg.vagueVariance[1]))
   } else {
     outputTokens = Math.round(inputTokens * cfg.penaltyMultiplier)

@@ -1,4 +1,4 @@
-export type CardType = 'task' | 'persona' | 'context' | 'format' | 'vague'
+export type CardType = 'task' | 'persona' | 'context' | 'format'
 
 export type Card = {
   id: string
@@ -6,7 +6,7 @@ export type Card = {
   title: string
   text: string
   tag?: string
-  quality?: 'correct' | 'wrong'
+  quality?: 'optimized' | 'non-optimized' | 'wrong'
 }
 
 export type Level = {

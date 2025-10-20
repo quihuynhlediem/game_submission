@@ -36,7 +36,7 @@ export const ChatPage: React.FC = () => {
             <div className="mt-3 flex justify-between items-center">
               <div className="text-sm text-gray-300">Total tokens: <strong>{totalTokens}</strong></div>
               <div className="flex gap-2">
-                <Button onClick={onRetry} className="bg-violet-500">Back to Bench</Button>
+                <Button onClick={onRetry} className="bg-violet-500">Back to Prompt Craft</Button>
                 <Link to="/chapters" className="px-3 py-2 rounded-2xl border border-gray-700 text-violet-300">Chapters</Link>
               </div>
             </div>
