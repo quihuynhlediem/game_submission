@@ -173,7 +173,7 @@ export default function LandingPage({ onStart }: LandingPageProps) {
         <div className="pt-12 border-t border-border/50">
           <p className="text-sm text-muted-foreground mb-6">Built by the Prompt Engineering Team</p>
           <div className="flex flex-wrap justify-center gap-8">
-            {["Alice Chen", "Bob Martinez", "Carol Singh", "David Park"].map((name) => (
+            {["Qui Huynh", "Bao Ho", "Hung Do", "Tan Nguyen"].map((name) => (
               <div key={name} className="text-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary mx-auto mb-2" />
                 <p className="text-sm font-medium">{name}</p>
