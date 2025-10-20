@@ -105,7 +105,7 @@ export const cards: Record<string, Card> = {
     tag: 'format',
     quality: 'non-optimized',
   },
-    // --- New PERSONA cards ---
+  // --- New PERSONA cards ---
   'c-persona-6': {
     id: 'c-persona-6',
     type: 'persona',
